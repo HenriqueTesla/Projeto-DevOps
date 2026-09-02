@@ -10,7 +10,6 @@ def calcular_aposentadoria(patrimonio_atual: float, aporte_mensal: float, anos: 
         saldo = (saldo + aporte_mensal) * (1 + taxa_mensal)
     return saldo
 
-if __name__ == "__main__":
 def calcular_juros_compostos(capital: float, taxa_anual: float, anos: int) -> float:
     montante = capital * ((1 + (taxa_anual / 100)) ** anos)
     return montante
