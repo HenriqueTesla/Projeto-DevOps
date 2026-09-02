@@ -10,7 +10,7 @@ def calcular_aposentadoria(patrimonio_atual: float, aporte_mensal: float, anos: 
         saldo = (saldo + aporte_mensal) * (1 + taxa_mensal)
     return saldo
 
-if __name__ == "___main__":
+if __name__ == "__main__":
     print("Iniciando o sistema FinCalc ... ")
     patrimonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
     print(f"Patrimônio Estimado para Aposentadoria: R${patrimonio:.2f}")
