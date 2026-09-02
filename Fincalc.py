@@ -6,7 +6,7 @@ def calcular_juros_compostos(capital: float, taxa_anual: float, anos: int) -> fl
     montante = capital * ((1 + (taxa_anual / 100)) ** anos)
     return montante
 
-if __name__ == "___main__":
+if __name__ == "__main__":
     print("Iniciando o sistema FinCalc ... ")
     montante = calcular_juros_simples(1000.0, 5.0, 2)
     print(f"Juros Simples: R$ {montante:.2f}")
