@@ -7,6 +7,15 @@ def calcular_juros_simples(
     return capital + juros
 
 
+def calcular_juros_compostos(
+        capital: float,
+        taxa_anual: float,
+        anos: int
+) -> float:
+    montante = capital * ((1 + (taxa_anual / 100)) ** anos)
+    return montante
+
+
 def calcular_aposentadoria(
         patrimonio_atual: float,
         aporte_mensal: float,
@@ -21,15 +30,6 @@ def calcular_aposentadoria(
     return saldo
 
 
-def calcular_juros_compostos(
-        capital: float,
-        taxa_anual: float,
-        anos: int
-) -> float:
-    montante = capital * ((1 + (taxa_anual / 100)) ** anos)
-    return montante
-
-
 def calcular_irrf(salario_bruto: float) -> float:
     if salario_bruto <= 2259.20:
         return 0.0
@@ -39,6 +39,20 @@ def calcular_irrf(salario_bruto: float) -> float:
         return (salario_bruto * 0.15) - 381.44
     else:
         return (salario_bruto * 0.225) - 662.77
+
+
+def calcular_parcela_price(
+        valor_emprestimo: float,
+        taxa_mensal: float,
+        meses: int
+) -> float:
+    i = taxa_mensal / 100
+    parcela = (
+        valor_emprestimo
+        * (i * ((1 + i) ** meses))
+        / (((1 + i) ** meses) - 1)
+    )
+    return parcela
 
 
 if __name__ == "__main__":
@@ -51,3 +65,5 @@ if __name__ == "__main__":
     print(f"Juros Compostos: R$ {montante_comp:.2f}")
     irrf = calcular_irrf(3500.0)
     print(f"IRRF: R$ {irrf:.2f}")
+    parcela = calcular_parcela_price(10000.0, 1.0, 24)
+    print(f"Parcela do Financiamento (Tabela Price): R$ {parcela:.2f}")
