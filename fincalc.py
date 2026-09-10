@@ -12,6 +12,12 @@ def calcular_juros_compostos(
         taxa_anual: float,
         anos: int
 ) -> float:
+    if capital < 0:
+        raise ValueError("O capital não pode ser negativo.")
+
+    if anos < 0:
+        raise ValueError("O número de anos não pode ser negativo.")
+
     montante = capital * ((1 + (taxa_anual / 100)) ** anos)
     return montante
 
