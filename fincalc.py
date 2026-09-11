@@ -55,6 +55,12 @@ def calcular_parcela_price(
         taxa_mensal: float,
         meses: int
 ) -> float:
+    if valor_emprestimo < 0:
+        raise ValueError("O valor do empréstimo não pode ser negativo")
+
+    if taxa_mensal == 0:
+        return valor_emprestimo / meses
+
     i = taxa_mensal / 100
     parcela = (
         valor_emprestimo
