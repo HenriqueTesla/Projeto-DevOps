@@ -37,6 +37,9 @@ def calcular_aposentadoria(
 
 
 def calcular_irrf(salario_bruto: float) -> float:
+    if salario_bruto < 0:
+        raise ValueError("O salário bruto não pode ser negativo.")
+
     if salario_bruto <= 2259.20:
         return 0.0
     elif salario_bruto <= 2826.65:
