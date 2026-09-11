@@ -34,11 +34,20 @@ def calcular_aposentadoria(
         anos: int,
         taxa_anual: float
 ) -> float:
+
+    if patrimonio_atual < 0:
+        raise ValueError("Patrimônio atual não pode ser negativo")
+
+    if anos < 0:
+        raise ValueError("Tempo não pode ser negativo")
+
     meses = anos * 12
     taxa_mensal = (taxa_anual / 100) / 12
     saldo = patrimonio_atual
+
     for _ in range(meses):
         saldo = (saldo + aporte_mensal) * (1 + taxa_mensal)
+
     return saldo
 
 
