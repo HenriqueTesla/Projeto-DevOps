@@ -3,6 +3,12 @@ def calcular_juros_simples(
         taxa_anual: float,
         anos: int
 ) -> float:
+    if capital < 0:
+        raise ValueError("O capital não pode ser negativo")
+
+    if anos < 0:
+        raise ValueError("O tempo não pode ser negativo")
+
     juros = capital * (taxa_anual / 100) * anos
     return capital + juros
 
