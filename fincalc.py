@@ -108,17 +108,17 @@ def calcular_valor_futuro(
     return vf
 
 
-if __name__ == "__main__":
-    print("Iniciando o sistema FinCalc ... ")
-    patrimonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
-    print(f"Patrimônio Estimado para Aposentadoria: R${patrimonio:.2f}")
-    montante = calcular_juros_simples(1000.0, 5.0, 2)
-    print(f"Juros Simples: R$ {montante:.2f}")
-    montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
-    print(f"Juros Compostos: R$ {montante_comp:.2f}")
-    irrf = calcular_irrf(3500.0)
-    print(f"IRRF: R$ {irrf:.2f}")
-    parcela = calcular_parcela_price(10000.0, 1.0, 24)
-    print(f"Parcela do Financiamento (Tabela Price): R$ {parcela:.2f}")
-    valor_futuro = calcular_valor_futuro(500.0, 1.0, 24)
-    print(f"Valor Futuro com Aportes Mensais: R$ {valor_futuro:.2f}")
+# if __name__ == "__main__":
+#     print("Iniciando o sistema FinCalc ... ")
+#     patrimonio = calcular_aposentadoria(10000.0, 500.0, 20, 6.0)
+#     print(f"Patrimônio Estimado para Aposentadoria: R${patrimonio:.2f}")
+#     montante = calcular_juros_simples(1000.0, 5.0, 2)
+#     print(f"Juros Simples: R$ {montante:.2f}")
+#     montante_comp = calcular_juros_compostos(1000.0, 5.0, 2)
+#     print(f"Juros Compostos: R$ {montante_comp:.2f}")
+#     irrf = calcular_irrf(3500.0)
+#     print(f"IRRF: R$ {irrf:.2f}")
+#     parcela = calcular_parcela_price(10000.0, 1.0, 24)
+#     print(f"Parcela do Financiamento (Tabela Price): R$ {parcela:.2f}")
+#     valor_futuro = calcular_valor_futuro(500.0, 1.0, 24)
+#     print(f"Valor Futuro com Aportes Mensais: R$ {valor_futuro:.2f}")
