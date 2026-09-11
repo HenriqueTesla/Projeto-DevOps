@@ -29,3 +29,11 @@ def test_aposentadoria_tempo_negativo():
     # Arrange, Act & Assert
     with pytest.raises(ValueError):
         calcular_aposentadoria(1000.0, 500.0, -1, 10.0)
+
+
+def test_aposentadoria_com_patrimonio_e_aporte():
+    # Arrange & Act
+    resultado = calcular_aposentadoria(1000.0, 500.0, 1, 10.0)
+
+    # Assert
+    assert round(resultado, 2) == 7439.85
